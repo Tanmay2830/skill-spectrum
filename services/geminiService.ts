@@ -330,8 +330,8 @@ export const processSmartChat = async (
 
 export const generateImage = async (prompt: string, size: '1K' | '2K' | '4K', aspectRatio: '1:1' | '4:3' | '16:9' | '3:4' | '9:16' = '1:1') => {
   try {
-    if (window.aistudio && !await window.aistudio.hasSelectedApiKey()) {
-      await window.aistudio.openSelectKey();
+    if ((window as any).aistudio && !await (window as any).aistudio.hasSelectedApiKey()) {
+      await (window as any).aistudio.openSelectKey();
     }
     const aiLocal = new GoogleGenAI({ apiKey: process.env.API_KEY });
     const response = await aiLocal.models.generateContent({
@@ -348,8 +348,8 @@ export const generateImage = async (prompt: string, size: '1K' | '2K' | '4K', as
 
 export const generateVeoVideo = async (prompt: string, aspectRatio: '16:9' | '9:16', imageBase64?: string) => {
   try {
-    if (window.aistudio && !await window.aistudio.hasSelectedApiKey()) {
-      await window.aistudio.openSelectKey();
+    if ((window as any).aistudio && !await (window as any).aistudio.hasSelectedApiKey()) {
+      await (window as any).aistudio.openSelectKey();
     }
     const aiLocal = new GoogleGenAI({ apiKey: process.env.API_KEY });
     let operation = await aiLocal.models.generateVideos({

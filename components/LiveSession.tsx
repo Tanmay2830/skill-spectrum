@@ -139,9 +139,9 @@ const LiveSession: React.FC<LiveSessionProps> = ({ onClose }) => {
   const [volume, setVolume] = useState(0);
   
   const sessionRef = useRef<any>(null);
-  const audioContextRef = useRef<AudioContext>(null);
-  const inputContextRef = useRef<AudioContext>(null);
-  const streamRef = useRef<MediaStream>(null);
+  const audioContextRef = useRef<AudioContext | null>(null);
+  const inputContextRef = useRef<AudioContext | null>(null);
+  const streamRef = useRef<MediaStream | null>(null);
 
   const startSession = async () => {
     setStatus('connecting');

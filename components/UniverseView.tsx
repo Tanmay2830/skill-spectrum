@@ -168,7 +168,7 @@ const UniverseView = forwardRef<UniverseViewHandle, UniverseViewProps>(({ data, 
       .attr("class", "decay-pulse");
 
     // Priority Highlight Ring
-    nodeGroup.filter(d => highlightedSkillName && d.name.toLowerCase().includes(highlightedSkillName.toLowerCase()))
+    nodeGroup.filter((d: SkillNode) => !!(highlightedSkillName && d.name.toLowerCase().includes(highlightedSkillName.toLowerCase())))
       .append("circle")
       .attr("r", d => getNodeRadius(d) * 2.5)
       .attr("fill", "none")
