@@ -1,0 +1,9 @@
+{
+  "name": "Skill Universe",
+  "description": "An immersive, AI-driven enterprise capability operating system where skills are planets and learning is exploration.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone",
+    "geolocation"
+  ]
+}
